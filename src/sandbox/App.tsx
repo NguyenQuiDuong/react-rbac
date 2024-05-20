@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 import { PermissionsView } from './components/PermissionsView';
 import { ComponentWithRoles } from './components/ComponentWithRoles';
 import { ComponentWithPermissions } from './components/ComponentWithPermissions';
 import { useRBACContext } from '..';
 import ComponentWithHOC from './components/ComponentWithHOC';
 import { Roles, RBAC, Permissions } from './RBAC';
+import {createRoot} from "react-dom/client";
 
 const RolesAndPermissionsInContext = () => {
   const helper = (title, obj) => {
@@ -124,5 +124,6 @@ const App = () => {
     </div>
   );
 };
+const root = createRoot(document.querySelector('#root'));
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+root.render(<App /> );
