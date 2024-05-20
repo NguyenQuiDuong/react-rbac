@@ -1,6 +1,6 @@
 {
   "name": "react-simple-rbac-reactjs-18",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React app RBAC solution for Reactjs 18",
   "main": "build/index.js",
   "module": "build/index.es.js",
@@ -44,7 +44,7 @@
     "url": "https://github.com/yoniaiz/react-rbac"
   },
   "peerDependencies": {
-    "react": "^18.3.1"
+    "react": "^18.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.5",
