@@ -5,7 +5,7 @@ export interface ChildrenProps {
 
 export interface RequiredRBAC<
   R extends string = string,
-  P extends string = string
+  P extends string = string,
 > {
   requiredRoles?: R[];
   requiredPermissions?: P[];
@@ -13,7 +13,7 @@ export interface RequiredRBAC<
 
 export interface RBACComponentProps<
   R extends string = string,
-  P extends string = string
+  P extends string = string,
 > extends RequiredRBAC<R, P> {
   children:
     | React.ReactElement
@@ -29,7 +29,7 @@ export interface RBACComponentProps<
 
 export interface RBACContextState<
   R extends string = string,
-  P extends string = string
+  P extends string = string,
 > {
   existingRolesNorm: Record<R, R>;
   existingPermissionsNorm: Record<P, P>;
@@ -43,7 +43,7 @@ export interface RBACContextState<
 
 export interface RBACContextProps<
   R extends string = string,
-  P extends string = string
+  P extends string = string,
 > extends RBACContextState<R, P> {
   addPermissions: (added: string[]) => void;
   blockPermissions: (blocked: string[]) => void;

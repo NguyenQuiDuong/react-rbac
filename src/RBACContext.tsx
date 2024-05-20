@@ -10,7 +10,7 @@ export const RBACContext = createContext<RBACContextProps>(null);
 
 export class RBACProvider<
   R extends string = string,
-  P extends string = string
+  P extends string = string,
 > extends React.Component<RBACProviderProps<R, P>, RBACContextState<R, P>> {
   constructor(props: RBACProviderProps<R, P>) {
     super(props);

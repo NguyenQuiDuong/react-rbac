@@ -5,7 +5,7 @@ import { RBACComponentProps } from './RBAC.types';
 
 export const RBACWrapper = <
   R extends string = string,
-  P extends string = string
+  P extends string = string,
 >({
   requiredRoles,
   requiredPermissions,

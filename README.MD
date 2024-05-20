@@ -1,5 +1,7 @@
 # React Simple RBAC
 
+This package update to adapt for Reactjs v18
+
 Library consists of Context, Component, HOC and hooks to handle cross app Role-based access control ([RBAC])
 
 ## **Table of Contents**
@@ -525,14 +527,14 @@ const Component = () => {
     </RBAC.Wrapper />
   )
 }
-  ```
+```
 
-  ## LICENSE
+## LICENSE
 
-  MIT
+MIT
 
-  [npm]: https://www.npmjs.com/
-  [node]: https://nodejs.org
-  [react]: https://facebook.github.io/react/
-  [rbac]: https://en.wikipedia.org/wiki/Role-based_access_control
-  [typescript]: https://www.typescriptlang.org/
+[npm]: https://www.npmjs.com/
+[node]: https://nodejs.org
+[react]: https://facebook.github.io/react/
+[rbac]: https://en.wikipedia.org/wiki/Role-based_access_control
+[typescript]: https://www.typescriptlang.org/

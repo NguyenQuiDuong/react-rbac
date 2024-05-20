@@ -42,7 +42,7 @@ export const useHasPermissions = <P extends string = string>(
 
 export const useGetRolesState = <
   R extends string = string,
-  P extends string = string
+  P extends string = string,
 >(
   roles: R[]
 ) => {
@@ -60,7 +60,7 @@ export const useGetRolesState = <
 
 export const useGetPermissionsState = <
   R extends string = string,
-  P extends string = string
+  P extends string = string,
 >(
   permissions: P[]
 ) => {
@@ -76,7 +76,7 @@ export const useGetPermissionsState = <
 
 export const useRBACContext = <
   R extends string = string,
-  P extends string = string
+  P extends string = string,
 >(): RBACContextProps<R, P> => {
   const context = useContext(RBACContext);
 

@@ -1,5 +1,5 @@
-import React from 'react';
-import { renderHook, act } from '@testing-library/react-hooks';
+import React, { ReactElement } from 'react';
+import { renderHook, act } from '@testing-library/react';
 import * as hooks from '../RBAC.hooks';
 import { RBACProvider } from '../RBACContext';
 
@@ -16,8 +16,8 @@ describe('RBAC hooks', () => {
       act(() => {
         expect(result.current).toHaveLength(1);
         expect(result.current).toMatchInlineSnapshot(`
-Array [
-  Object {
+[
+  {
     "added": false,
     "blocked": false,
     "existing": true,
@@ -43,8 +43,8 @@ Array [
       act(() => {
         expect(result.current).toHaveLength(1);
         expect(result.current).toMatchInlineSnapshot(`
-Array [
-  Object {
+[
+  {
     "added": false,
     "blocked": false,
     "existing": true,
@@ -58,10 +58,11 @@ Array [
   describe('Context functionality test', () => {
     it('Should be able to modify permissions', () => {
       const { result } = renderHook(hooks.useRBACContext, {
-        initialProps: { permissions: ['add_credit'] },
-        wrapper: ({ children, permissions }) => (
-          <RBACProvider permissions={permissions}>{children}</RBACProvider>
-        ),
+        initialProps: { permissions: ['add_credit_test'] },
+        wrapper: ({ children }) => {
+          const props = (children as ReactElement).props.renderCallbackProps;
+          return <RBACProvider {...props}>{children}</RBACProvider>;
+        },
       });
 
       act(() => {
@@ -94,9 +95,10 @@ Array [
     it('Should be able to modify roles', () => {
       const { result } = renderHook(hooks.useRBACContext, {
         initialProps: { permissions: ['add_credit'] },
-        wrapper: ({ children, permissions }) => (
-          <RBACProvider permissions={permissions}>{children}</RBACProvider>
-        ),
+        wrapper: ({ children }) => {
+          const props = (children as ReactElement).props.renderCallbackProps;
+          return <RBACProvider {...props}>{children}</RBACProvider>;
+        },
       });
 
       act(() => {
@@ -129,9 +131,10 @@ Array [
     it('Should be able to reset all modifications', () => {
       const { result } = renderHook(hooks.useRBACContext, {
         initialProps: { permissions: ['add_credit'] },
-        wrapper: ({ children, permissions }) => (
-          <RBACProvider permissions={permissions}>{children}</RBACProvider>
-        ),
+        wrapper: ({ children }) => {
+          const props = (children as ReactElement).props.renderCallbackProps;
+          return <RBACProvider {...props}>{children}</RBACProvider>;
+        },
       });
 
       act(() => {
